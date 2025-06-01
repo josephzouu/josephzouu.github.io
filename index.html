@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Joseph Zou · Portfolio</title>
+
+  <!-- Google Fonts: Inter + Source Code Pro -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Source+Code+Pro&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Link to your CSS -->
+  <link rel="stylesheet" href="css/main.css" />
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="container nav-container">
+      <!-- Logo: your initials “JZ” -->
+      <div class="logo"><a href="#">JZ</a></div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="menu-toggle">☰</div>
+    </div>
+  </nav>
+
+  <!-- HERO / HOME SECTION -->
+  <section id="home" class="hero-section">
+    <div class="container hero-container">
+      <!-- LEFT: Text -->
+      <div class="hero-text">
+        <h1>Hi, I’m <span class="highlight">Joseph Zou</span></h1>
+        <p class="subtitle">Data Science Major, Purdue University (May 2026)</p>
+        <p class="description">
+          Telling stories with data. I play water polo, go to the gym, avid music enjoyer (Coldplay, LANY, Lauv, Jeremy Zucker), outdoors.
+        </p>
+        <div class="hero-buttons">
+          <a href="#projects" class="btn btn-primary">View My Work</a>
+          <a href="#contact" class="btn btn-outline">Get In Touch</a>
+        </div>
+      </div>
+
+      <!-- RIGHT: Decorative code snippet -->
+      <div class="hero-snippet">
+        <pre><code>
+const portfolio = {
+  name: "Joseph Zou",
+  role: "Data Science Major",
+  status: "you’re reading it",
+  graduation: "May 2026"
+};
+        </code></pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT ME SECTION -->
+  <section id="about">
+    <div class="container">
+      <h2>About Me</h2>
+      <p>
+        Telling stories with data. I play water polo, go to the gym, avid music enjoyer (Coldplay, LANY, Lauv, Jeremy Zucker), outdoors.
+      </p>
+    </div>
+  </section>
+
+  <!-- PROJECTS SECTION -->
+  <section id="projects">
+    <div class="container">
+      <h2>Projects</h2>
+      <div class="project-list">
+        <!-- PROJECT #1 -->
+        <div class="project-card">
+          <h3>NBA Prop Prediction | Python, Pandas, nba_api, Regex, Logging, Data Analysis</h3>
+          <p>
+            • Built a stat projection tool using nba_api to analyze player game logs, team matchups, and current trends<br />
+            • Engineered a weighted averaging system that adjusts player performance by various factors<br />
+            • Integrated team stat rankings and matchup deltas to refine individual projections based on historical performance<br />
+            • Currently developing a machine learning model to improve the accuracy of player prop predictions across key stat categories
+          </p>
+          <p class="project-dates">February 2025 – Present</p>
+        </div>
+
+        <!-- PROJECT #2 -->
+        <div class="project-card">
+          <h3>TextMine | Python, Pandas, NumPy, NLTK, Regex, Plotnine (ggplot)</h3>
+          <p>
+            • Built a text analysis pipeline to compare academic disciplines using TF-IDF<br />
+            • Preprocessed raw text with regex and NLTK to remove stopwords and standardize vocabulary<br />
+            • Calculated and visualized term relevance using TF-IDF scores and bar plots with Plotnine<br />
+            • Structured frequency data in Pandas DataFrames to analyze domain-specific word patterns
+          </p>
+          <p class="project-dates">August 2024 – September 2024</p>
+        </div>
+
+        <!-- PROJECT #3 -->
+        <div class="project-card">
+          <h3>Swimlytics | R, k-NN, t-test, ggplot2, tidyverse</h3>
+          <p>
+            • Investigated trends in youth swimming to explore fairness and performance equity<br />
+            • Cleaned and structured raw competition results for EDA and hypothesis testing<br />
+            • Ran two-sample t-tests to assess statistical significance of gender performance gaps<br />
+            • Built a k-NN model with 93% accuracy to predict swimmer gender using age and race time features
+          </p>
+          <p class="project-dates">May 2024 – July 2024</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE SECTION -->
+  <section id="experience">
+    <div class="container">
+      <h2>Experience</h2>
+      <ul class="experience-list">
+        <!-- EXPERIENCE #1 -->
+        <li>
+          <h3>Data Science Intern @ BASF</h3>
+          <span class="date-range">August 2024 – May 2025</span>
+          <p class="experience-subtitle">Data Mine Corporate Partners Project | Champaign, IL</p>
+          <ul class="bulleted">
+            <li>Cleaned and joined 500K+ rows of miticide application data by site, crop, ingredient, and treatment window</li>
+            <li>Engineered features like UniqueSiteID and application sequences to model second-treatment probabilities</li>
+            <li>Built predictive models to assess reapplication risk and inform optimal product sequencing</li>
+            <li>Conducted cost-benefit analysis comparing treatment strategies based on modeled risk and product usage</li>
+            <li>Collaborated with agronomists and data scientists to deliver insights that supported data-driven pest management decisions for growers</li>
+          </ul>
+        </li>
+
+        <!-- EXPERIENCE #2 -->
+        <li>
+          <h3>Undergraduate Research Assistant – CourseKata Project</h3>
+          <span class="date-range">March 2024 – June 2024</span>
+          <p class="experience-subtitle">Purdue University | West Lafayette, IN</p>
+          <ul class="bulleted">
+            <li>Used R to analyze learning data from 450K+ students with regression models (R² up to 0.97)</li>
+            <li>Performed correlation analysis in R to link engagement time with reduced idle behavior</li>
+            <li>Applied behavioral clustering to video data; rewatchers were 72% more likely to complete assignments</li>
+            <li>Created visualizations in ggplot2 to highlight trends in performance and engagement</li>
+            <li>Presented findings at ASA DataFest using insights from tidyverse-based data pipelines</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- TECHNICAL SKILLS SECTION -->
+  <section id="skills">
+    <div class="container">
+      <h2>Technical Skills</h2>
+      <p><strong>Languages:</strong> Java, Python, C/C++, SQL, R</p>
+      <p><strong>Libraries:</strong> pandas, NumPy, Matplotlib</p>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section id="contact">
+    <div class="container">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:josephzou05@gmail.com">josephzou05@gmail.com</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/josephzou05" target="_blank">linkedin.com/in/josephzou05</a></p>
+      <p>GitHub: <a href="https://github.com/josephzouu" target="_blank">github.com/josephzouu</a></p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p>© 2025 Joseph Zou. Built with ❤️.</p>
+    </div>
+  </footer>
+
+  <!-- OPTIONAL JS FOR MOBILE MENU -->
+  <script src="js/main.js"></script>
+</body>
+</html>
