@@ -121,7 +121,7 @@ body {
   4. HERO / HOME SECTION
 ---------------------------------------*/
 .hero-section {
-  /* FIXED: changed 700vh to 70vh so the hero isn't ridiculously tall */
+  /* Reduced from 100vh to 70vh to shrink the gap above About Me */
   min-height: 70vh;
   display: flex;
   align-items: center;

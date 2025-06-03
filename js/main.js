@@ -15,46 +15,43 @@ document.addEventListener('DOMContentLoaded', () => {
   // 2) PHOTO GALLERY CAROUSEL LOGIC
   // --------------------------------------------
   const track = document.querySelector('.carousel-track');
-  if (!track) return; // if #gallery isn’t on this page, stop here
+  if (!track) return; // if the #gallery section isn’t on this page, do nothing
 
   const slides = Array.from(track.children);
   const nextButton = document.querySelector('.carousel-button.next');
   const prevButton = document.querySelector('.carousel-button.prev');
 
-  // 2a) Get each slide’s width
   let slideWidth = slides[0].getBoundingClientRect().width;
 
-  // 2b) Position each slide side by side
+  // 2a) Position each slide next to one another (side by side)
   slides.forEach((slide, index) => {
     slide.style.left = slideWidth * index + 'px';
   });
 
   let currentIndex = 0;
 
-  // 2c) Function to move to a given slide index
   const moveToSlide = (index) => {
     track.style.transform = 'translateX(-' + slideWidth * index + 'px)';
   };
 
-  // 2d) “Next” arrow clicked
+  // 2b) Next button: advance index (wrap at end)
   nextButton.addEventListener('click', () => {
     currentIndex = (currentIndex + 1) % slides.length;
     moveToSlide(currentIndex);
   });
 
-  // 2e) “Prev” arrow clicked
+  // 2c) Prev button: decrement index (wrap at start)
   prevButton.addEventListener('click', () => {
     currentIndex = (currentIndex - 1 + slides.length) % slides.length;
     moveToSlide(currentIndex);
   });
 
-  // 2f) Re‐calculate positions if the window is resized
+  // 2d) If the window resizes, recalc slide widths & re‐position
   window.addEventListener('resize', () => {
     slideWidth = slides[0].getBoundingClientRect().width;
     slides.forEach((slide, index) => {
       slide.style.left = slideWidth * index + 'px';
     });
-    // Also keep the track translated to the correct slide
     track.style.transform = 'translateX(-' + slideWidth * currentIndex + 'px)';
   });
 });
