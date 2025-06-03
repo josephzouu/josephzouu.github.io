@@ -17,9 +17,9 @@ html {
 body {
   font-family: 'Inter', sans-serif;
   line-height: 1.6;
-  color: #E0D9C0;                /* light “cream” text */
-  background-color: #000000;     /* solid black background */
-  padding-top: 4rem;             /* space for fixed navbar */
+  color: #e5e5e5;
+  background-color: #0f0f1a; /* dark navy */
+  padding-top: 4rem; /* space for fixed navbar */
 }
 
 /* Utility: container */
@@ -38,36 +38,32 @@ body {
   padding: 0.75rem 1.5rem;
   border-radius: 4px;
   font-weight: 600;
-  transition: background-color 0.2s, color 0.2s;
+  transition: background-color 0.2s;
   text-align: center;
 }
 
-/* Primary button: Purdue Gold on black */
 .btn-primary {
-  background-color: #FFB900;  /* Purdue Gold */
-  color: #000000;             /* black text on gold */
+  background-color: #00bfff; /* cyan accent */
+  color: #ffffff;
 }
 
 .btn-primary:hover {
-  background-color: #E6A200;  /* slightly darker gold on hover */
-  color: #000000;
+  background-color: #00a5d2;
 }
 
-/* Outline button: gold border, transparent background */
 .btn-outline {
   background: transparent;
-  border: 2px solid #FFB900;   /* gold border */
-  color: #FFB900;              /* gold text */
+  border: 2px solid #00bfff;
+  color: #00bfff;
 }
 
 .btn-outline:hover {
-  background-color: rgba(255, 185, 0, 0.1);
-  color: #FFB900;
+  background-color: rgba(0, 191, 255, 0.1);
 }
 
-/* Highlighted text (e.g. “Joseph Zou” in hero) */
+/* Highlighted text */
 .highlight {
-  color: #FFB900; /* Gold */
+  color: #00bfff;
 }
 
 /*---------------------------------------
@@ -78,7 +74,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.95); /* nearly opaque black */
+  background-color: rgba(15, 15, 26, 0.95);
   z-index: 1000;
 }
 
@@ -90,7 +86,7 @@ body {
 }
 
 .logo a {
-  color: #FFB900;            /* Purdue Gold for “JZ” */
+  color: #00bfff;
   font-size: 1.5rem;
   font-weight: 700;
   text-decoration: none;
@@ -103,4 +99,340 @@ body {
 }
 
 .nav-links li a {
-  color: #
+  color: #e5e5e5;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.nav-links li a:hover {
+  color: #00bfff;
+}
+
+/* Hamburger icon – hidden on desktop */
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: #e5e5e5;
+}
+
+/*---------------------------------------
+  4. HERO / HOME SECTION
+---------------------------------------*/
+.hero-section {
+  /* Reduced from 100vh to 70vh to shrink the gap above About Me */
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  background-color: #0f0f1a;
+  padding: 2rem 0;
+}
+
+.hero-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  align-items: center;
+}
+
+/* Left side: text */
+.hero-text h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+
+.hero-text .subtitle {
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  color: #a0a0a0;
+}
+
+.hero-text .description {
+  margin-bottom: 1.5rem;
+  color: #c0c0c0;
+}
+
+/* Right side: code snippet box */
+.hero-snippet {
+  background-color: #1d1d2a;
+  border-radius: 8px;
+  padding: 1.5rem;
+  overflow-x: auto;
+}
+
+.hero-snippet code {
+  display: block;
+  font-family: 'Source Code Pro', monospace;
+  color: #ffffff;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  white-space: pre;
+}
+
+/*---------------------------------------
+  5. SECTION HEADINGS
+---------------------------------------*/
+section {
+  padding: 4rem 0;
+}
+
+section h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/*---------------------------------------
+  6. ABOUT SECTION
+---------------------------------------*/
+#about p {
+  max-width: 700px;
+  margin: 0 auto;
+  color: #c0c0c0;
+  text-align: center;
+}
+
+/*---------------------------------------
+  7. PROJECTS SECTION
+---------------------------------------*/
+.project-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.project-card {
+  background-color: #1d1d2a;
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition: transform 0.2s;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+}
+
+.project-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: #00bfff;
+}
+
+.project-card p {
+  color: #c0c0c0;
+  margin-bottom: 0.75rem;
+  line-height: 1.4;
+}
+
+.project-card .project-dates {
+  font-size: 0.9rem;
+  color: #a0a0a0;
+  margin-top: 0.5rem;
+}
+
+/*---------------------------------------
+  8. EXPERIENCE SECTION
+---------------------------------------*/
+.experience-list {
+  list-style: none;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.experience-list li {
+  background-color: #1d1d2a;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.experience-list li h3 {
+  font-size: 1.25rem;
+  color: #00bfff;
+  margin-bottom: 0.25rem;
+}
+
+.experience-list li .date-range {
+  font-size: 0.9rem;
+  color: #a0a0a0;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.experience-list li .experience-subtitle {
+  font-style: italic;
+  color: #c0c0c0;
+  margin-bottom: 1rem;
+}
+
+.experience-list li ul.bulleted {
+  list-style: disc inside;
+  color: #c0c0c0;
+  line-height: 1.5;
+}
+
+.experience-list li ul.bulleted li {
+  margin-bottom: 0.5rem;
+}
+
+/*---------------------------------------
+  9. TECHNICAL SKILLS SECTION
+---------------------------------------*/
+#skills {
+  padding-top: 2rem;
+}
+
+#skills p {
+  max-width: 700px;
+  margin: 0 auto;
+  color: #c0c0c0;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+/*---------------------------------------
+ 10. CONTACT SECTION
+---------------------------------------*/
+#contact p {
+  text-align: center;
+  color: #c0c0c0;
+  margin-bottom: 0.5rem;
+}
+
+#contact a {
+  color: #00bfff;
+  text-decoration: none;
+}
+
+#contact a:hover {
+  text-decoration: underline;
+}
+
+/*---------------------------------------
+ 11. FOOTER
+---------------------------------------*/
+footer {
+  background-color: #0f0f1a;
+  text-align: center;
+  padding: 2rem 0;
+  color: #666666;
+  font-size: 0.9rem;
+}
+
+/*---------------------------------------
+ 12. MOBILE RESPONSIVENESS
+---------------------------------------*/
+@media (max-width: 768px) {
+  .hero-container {
+    grid-template-columns: 1fr; /* stack hero columns vertically */
+    text-align: center;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 4rem;
+    right: 0;
+    background-color: rgba(15, 15, 26, 0.95);
+    flex-direction: column;
+    width: 200px;
+    display: none;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin: 1rem 0;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+
+/*-----------------------------------------
+  PHOTO GALLERY / CAROUSEL STYLES
+-----------------------------------------*/
+#gallery {
+  padding: 4rem 0; /* vertical spacing above/below the gallery */
+}
+
+#gallery h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.carousel-container {
+  position: relative;
+  max-width: 600px;   /* adjust if you want wider/narrower */
+  margin: 0 auto;     /* center the carousel on the page */
+  overflow: hidden;   /* hide all but one slide at a time */
+}
+
+.carousel-track-container {
+  overflow: hidden;   /* also hide overflow inside the track */
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  list-style: none;   /* remove default bullets */
+  padding: 0;
+  margin: 0;
+}
+
+.slide {
+  min-width: 100%;    /* each slide takes up 100% of .carousel-container */
+  box-sizing: border-box;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px; /* slight rounding on the corners */
+}
+
+/* Arrow buttons */
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #ffffff;
+  border: none;
+  font-size: 1.5rem;
+  padding: 0.5rem 0.75rem;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 10;
+}
+
+.carousel-button.prev {
+  left: 10px;
+}
+
+.carousel-button.next {
+  right: 10px;
+}
+
+.carousel-button:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* On smaller screens, let the carousel shrink slightly */
+@media (max-width: 768px) {
+  .carousel-container {
+    max-width: 90%; /* reduce width on mobile */
+  }
+}
