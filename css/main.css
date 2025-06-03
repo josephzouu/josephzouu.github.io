@@ -121,7 +121,7 @@ body {
   4. HERO / HOME SECTION
 ---------------------------------------*/
 .hero-section {
-  min-height: 100vh;
+  min-height: 700vh;
   display: flex;
   align-items: center;
   background-color: #0f0f1a;
