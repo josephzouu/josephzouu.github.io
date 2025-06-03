@@ -121,7 +121,8 @@ body {
   4. HERO / HOME SECTION
 ---------------------------------------*/
 .hero-section {
-  min-height: 700vh;
+  /* Reduced from 100vh to 70vh to shrink the gap above About Me */
+  min-height: 70vh;
   display: flex;
   align-items: center;
   background-color: #0f0f1a;
@@ -354,5 +355,84 @@ footer {
 
   .menu-toggle {
     display: block;
+  }
+}
+
+/*-----------------------------------------
+  PHOTO GALLERY / CAROUSEL STYLES
+-----------------------------------------*/
+#gallery {
+  padding: 4rem 0; /* vertical spacing above/below the gallery */
+}
+
+#gallery h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.carousel-container {
+  position: relative;
+  max-width: 600px;   /* adjust if you want wider/narrower */
+  margin: 0 auto;     /* center the carousel on the page */
+  overflow: hidden;   /* hide all but one slide at a time */
+}
+
+.carousel-track-container {
+  overflow: hidden;   /* also hide overflow inside the track */
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  list-style: none;   /* remove default bullets */
+  padding: 0;
+  margin: 0;
+}
+
+.slide {
+  min-width: 100%;    /* each slide takes up 100% of .carousel-container */
+  box-sizing: border-box;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px; /* slight rounding on the corners */
+}
+
+/* Arrow buttons */
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #ffffff;
+  border: none;
+  font-size: 1.5rem;
+  padding: 0.5rem 0.75rem;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 10;
+}
+
+.carousel-button.prev {
+  left: 10px;
+}
+
+.carousel-button.next {
+  right: 10px;
+}
+
+.carousel-button:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* On smaller screens, let the carousel shrink slightly */
+@media (max-width: 768px) {
+  .carousel-container {
+    max-width: 90%; /* reduce width on mobile */
   }
 }
