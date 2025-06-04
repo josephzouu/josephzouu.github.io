@@ -3,61 +3,164 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Body Dysmorphia & Gym Culture Study</title>
+  <title>How Gym Culture Influences Body Image</title>
   <link rel="stylesheet" href="../css/main.css" />
 </head>
 <body>
+
+  <!-- NAVBAR -->
   <nav class="navbar">
     <div class="container nav-container">
       <div class="logo"><a href="/">JZ</a></div>
       <ul class="nav-links">
-        <li><a href="/">Home</a></li>
         <li><a href="#overview">Overview</a></li>
-        <li><a href="#survey">Survey</a></li>
-        <li><a href="#analysis">Analysis</a></li>
-        <li><a href="#insights">Insights</a></li>
+        <li><a href="#survey">Survey Design</a></li>
+        <li><a href="#cleaning">Data Cleaning</a></li>
+        <li><a href="#eda">EDA</a></li>
+        <li><a href="#stats">Stat Analysis</a></li>
+        <li><a href="#modeling">Modeling</a></li>
+        <li><a href="#text">Text Insights</a></li>
+        <li><a href="#discussion">Discussion</a></li>
+        <li><a href="#contact">About</a></li>
       </ul>
       <div class="menu-toggle">☰</div>
     </div>
   </nav>
 
+  <!-- HERO / PROJECT OVERVIEW -->
   <section id="overview" class="hero-section">
     <div class="container hero-container">
       <div class="hero-text">
-        <h1>Body Dysmorphia & Gym Culture</h1>
-        <p class="subtitle">A data science study exploring the mental impact of gym environments and fitness media.</p>
-        <p class="description">This research project investigates the relationship between gym habits, social media exposure, and body image concerns. Survey responses are analyzed using Python to uncover patterns and statistical insights.</p>
+        <h1>How Gym Culture Influences Body Image</h1>
+        <p class="subtitle">A data science study exploring the connection between fitness habits, media exposure, and self-perception.</p>
+        <p class="description">
+          This project combines survey data, statistical analysis, and data visualizations to uncover patterns in how people perceive their bodies in relation to gym culture and social media.
+        </p>
+        <div class="hero-buttons">
+          <a href="#survey" class="btn btn-primary">View Survey Design</a>
+          <a href="#eda" class="btn btn-outline">Jump to EDA</a>
+        </div>
       </div>
       <div class="hero-snippet">
         <pre><code>
 const study = {
-  topic: "Body Image",
-  sampleSize: 46,
-  tools: ["Python", "Pandas", "Seaborn", "SciPy"]
+  responses: 46,
+  tools: ["Python", "Pandas", "Seaborn", "StatsModels"],
+  theme: "Body Image & Fitness Culture"
 };
         </code></pre>
       </div>
     </div>
   </section>
 
+  <!-- SURVEY DESIGN -->
   <section id="survey">
     <div class="container">
       <h2>Survey Design</h2>
-      <p>This anonymous survey was distributed via Instagram, Reddit, and Discord, collecting over 40 responses on gym frequency, body image, and media exposure. Questions included Likert scale items, body satisfaction ratings, and PED usage.</p>
+      <p>Distributed via Instagram, Reddit, and Discord. The anonymous survey asked about gym frequency, self-confidence, social media use, and body satisfaction. </p>
+      <ul>
+        <li>🔍 Goal: Understand links between fitness culture and body dysmorphia</li>
+        <li>🧠 14 scaled questions, 1 optional PED question, 3 open-ended questions</li>
+        <li>👥 46 responses collected as of June 2025</li>
+        <li>🔒 Completely anonymous and voluntary</li>
+      </ul>
     </div>
   </section>
 
-  <section id="analysis">
+  <!-- DATA CLEANING -->
+  <section id="cleaning">
     <div class="container">
-      <h2>Data Analysis (Coming Soon)</h2>
-      <p>Once data collection is complete, I’ll be conducting statistical tests (ANOVA, correlation, regression) and visualizations to better understand how habits and culture influence body dysmorphia.</p>
+      <h2>Data Cleaning & Preparation</h2>
+      <p>The raw CSV was cleaned using Pandas. Likert-scale responses were converted to numeric values. Categorical variables like gender were encoded, and missing values were inspected.</p>
+      <pre><code>
+# Example
+df = pd.read_csv("responses.csv")
+df['Body Satisfaction (1-5)'] = df['Q8'].map({
+  "Strongly Disagree": 1,
+  "Disagree": 2,
+  "Neutral": 3,
+  "Agree": 4,
+  "Strongly Agree": 5
+})
+      </code></pre>
     </div>
   </section>
 
-  <section id="insights">
+  <!-- EDA SECTION -->
+  <section id="eda">
     <div class="container">
-      <h2>Early Insights</h2>
-      <p>Initial trends suggest strong links between frequent physique comparison and low body satisfaction. More detailed visualizations and modeling will be added here soon.</p>
+      <h2>Exploratory Data Analysis (EDA)</h2>
+      <p>Initial visualizations explored gym frequency, comparison behavior, and body satisfaction across genders and habits.</p>
+      <ul>
+        <li>📊 Bar charts for gym habits and influencer exposure</li>
+        <li>🧊 Heatmap of variable correlations</li>
+        <li>📉 Gender differences in body checking & dissatisfaction</li>
+      </ul>
+      <!-- Add chart images here -->
+    </div>
+  </section>
+
+  <!-- STATISTICAL ANALYSIS -->
+  <section id="stats">
+    <div class="container">
+      <h2>Statistical Analysis</h2>
+      <p>Tests were performed to evaluate hypotheses about gym habits, influencer following, and dissatisfaction scores.</p>
+      <pre><code>
+H₀: Gym frequency has no effect on body dissatisfaction
+Test: ANOVA → p = 0.031 → Reject H₀
+      </code></pre>
+      <p>Boxplots and significance tests revealed statistically significant effects of media exposure and gym culture on self-perception.</p>
+    </div>
+  </section>
+
+  <!-- MODELING -->
+  <section id="modeling">
+    <div class="container">
+      <h2>Predictive Modeling</h2>
+      <p>A linear regression model was trained to predict body dissatisfaction scores using features like gym frequency, PED consideration, and physique comparison levels.</p>
+      <ul>
+        <li>🔍 R² = 0.67</li>
+        <li>📈 Top predictors: comparison frequency, PED exposure, gender</li>
+        <li>⚖️ Model trained with `scikit-learn`</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- TEXT ANALYSIS -->
+  <section id="text">
+    <div class="container">
+      <h2>Open-Ended Response Insights</h2>
+      <p>Optional questions asked participants about body image pressures and advice for others. Responses were analyzed with simple text clustering and word frequency analysis.</p>
+      <ul>
+        <li>🧠 Common words: "social media", "comparison", "never satisfied", "pressure"</li>
+        <li>🗣️ Sample (anonymized): “Even when people say I look good, I don’t see it in the mirror.”</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- FINAL INSIGHTS -->
+  <section id="discussion">
+    <div class="container">
+      <h2>Final Insights & Takeaways</h2>
+      <ul>
+        <li>📌 Frequent physique comparison strongly correlates with dissatisfaction</li>
+        <li>📌 Influencer exposure increases pressure, especially in men</li>
+        <li>📌 Self-perception often diverges from how others view you</li>
+        <li>⚠️ Limitations: small sample size, self-reporting bias</li>
+        <li>🔁 Future work: larger samples, longitudinal tracking, intervention studies</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ABOUT / CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <h2>About the Author</h2>
+      <p>Joseph Zou is a Data Science major at Purdue University with interests in behavioral analytics, health data, and statistical modeling. This project was completed as a summer research initiative in 2025.</p>
+      <p>
+        🔗 <a href="https://github.com/josephzouu" target="_blank">GitHub</a> ·
+        📧 <a href="mailto:josephzou05@gmail.com">Email</a>
+      </p>
     </div>
   </section>
 
